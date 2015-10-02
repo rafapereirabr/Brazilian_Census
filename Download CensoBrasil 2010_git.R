@@ -30,9 +30,6 @@ library(beepr)    # Beeps at the end of the command
 options(scipen=999) # disable scientific notation
 
 
-setwd("C:/Users/rafa/Downloads/s")
-
-
 
 _____________________________________________________________________________________
 ######## Download Census DATA -----------------------------------------------------
