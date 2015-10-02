@@ -1,2 +1,15 @@
-# Brazilian_Census_2010
-Script to Download data from 2010 Brazilian census and save it as .csv files
+# Brazilian Census 2010
+#This script will help you Download the 2010 Brazilian Census data sets and save them as .csv files. 
+
+**If you are familiared with SQL and Monetab**, you have probably heard about the [terrific job that Anthony Damico and Djalma Pessoa](http://www.asdfree.com/2014/05/analyze-censo-demografico-no-brasil.html) have put together to write a code to download and analyze the 2010 Brazilian Census data.
+
+
+However, if you are looking for a pure `R` solution AND you want a fast solution, you might find this code useful.
+
+- The code is based in pure `R`, it does not demand other softwares. 
+- The script is written taking advantage of `readr` capabilities, a [new R package](http://blog.rstudio.org/2015/04/09/readr-0-1-0/) that is extremelly fast to read fixed width text files. 
+- Once with the text files are stored in your computer, it doesn't take long to save the national data sets. It took me respectivly 13 minutes and 43 minutes to save the national data sets of houholds and individuals records. Saving the files is actually the most time-consuming part.
+
+
+
+
