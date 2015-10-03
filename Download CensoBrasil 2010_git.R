@@ -27,7 +27,6 @@ library(beepr)    # Beeps at the end of the command
 options(scipen=999) # disable scientific notation
 
 
-setwd("C:/Users/rafa/Downloads/s")
 
 
 
@@ -54,7 +53,7 @@ ________________________________________________________________________________
 
 # unzip all Files
   filenames <- list.files("./Dados_txt", pattern=".zip", full.names=TRUE)
-  lapply(filenames,unzip)
+  lapply(filenames,unzip, exdir = "./Dados_txt")
 
 _____________________________________________________________________________________
 ######## Download Census Documentation -----------------------------------------------------
