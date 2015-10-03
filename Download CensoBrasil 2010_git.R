@@ -12,12 +12,15 @@
 # R version:  RRO 3.2.2 (64 bits)
 
 
-# set working Directory
-# This is the on
-  setwd("R:/Bases-de-Dados/Censo Demografico/Censo 2010")
+############################################################################
+## ATTENTION: This is the only modification you have to do in this script, I hope ;)
+  setwd("R:/Bases-de-Dados/Censo Demografico/Censo 2010") # set working Directory
+############################################################################
 
 
-##################### Load packages ----
+
+
+##################### Load packages ----------------------------------------
 
 library(data.table) # to manipulate data frames (fread is ultrafast for reading CSV files)
 library(LaF)
@@ -27,8 +30,11 @@ library(beepr)    # Beeps at the end of the command
 options(scipen=999) # disable scientific notation
 
 
+<<<<<<< HEAD
 
 
+=======
+>>>>>>> origin/master
 
 _____________________________________________________________________________________
 ######## Download Census DATA -----------------------------------------------------
