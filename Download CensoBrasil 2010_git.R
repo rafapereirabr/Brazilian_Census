@@ -30,12 +30,6 @@ library(beepr)    # Beeps at the end of the command
 options(scipen=999) # disable scientific notation
 
 
-<<<<<<< HEAD
-
-
-=======
->>>>>>> origin/master
-
 _____________________________________________________________________________________
 ######## Download Census DATA -----------------------------------------------------
 
