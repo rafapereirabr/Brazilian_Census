@@ -35,7 +35,7 @@ ________________________________________________________________________________
 
 # create subdirectories where we'll save files
   dir.create(file.path(".", "Dados_txt"))
-  dir.create(file.path(".", "Dados_laf"))
+  dir.create(file.path(".", "Dados_csv"))
   
 
   destfolder <- "./Dados_txt/"
@@ -90,6 +90,16 @@ ________________________________________________________________________________
   # Apply function
     lapply(list(dic_dom,dic_pes,dic_mor), computeWidth)
   
+
+### In case you need to work with a smaller subset of the data (e.g. because of memory limits), I would suggest you to make a list of the variables you need ###
+    # myvariblesPES <- c("V0001", "V6400", "V0011", "V0300", "V0601", "V6036", "V0606", "V0010")
+### Then, you have two options ### 
+# 1) Use this list to filter the documentation so you read from the .txt file only those variables you want
+     # dic_pes <- dic_pes[VAR %in% myvariblesPES]
+# 2) Save the whole data set file as .csv and but specify the variables you want to load
+     # individuals <- fread("pesBrasil.csv", select= myvariblesPES)
+
+individuals <- fread("pesBrasil.csv", select= myvariblesPES)
 _____________________________________________________________________________________
 ### MORTALITY Files (5 seconds) -----------------------------------------------------
     # Append ALL .txt files
@@ -130,7 +140,7 @@ ptm <- proc.time()  # Start the clock!
     }
 
 # Save national data set as a '.csv' file
-  write_csv(temp, path=paste0("./Dados_laf/censo2010_BRmor.csv"))
+  write_csv(temp, path=paste0("./Dados_csv/censo2010_BRmor.csv"))
   rm(temp,readMOR); gc()
   
   proc.time() - ptm   # Stop the clock
@@ -177,7 +187,7 @@ ptm <- proc.time()  # Start the clock!
     }
 
 # Save national data set as a '.csv' file
-  write_csv(temp, path=paste0("./Dados_laf/censo2010_BRdom.csv"))
+  write_csv(temp, path=paste0("./Dados_csv/censo2010_BRdom.csv"))
   rm(temp,readDOM); gc()
 
 proc.time() - ptm   # Stop the clock
@@ -225,7 +235,7 @@ for (i in 1:length(data_files)){
   cat("saving", i, "out of 28", file) # update status of the loop
   
   # Save national data set as a '.csv' file
-  write_csv(temp, path=paste0("./Dados_laf/censo2010_BRpes.csv"), append = T)
+  write_csv(temp, path=paste0("./Dados_csv/censo2010_BRpes.csv"), append = T)
   rm(temp); gc()
 }
 proc.time() - ptm   # Stop the clock
