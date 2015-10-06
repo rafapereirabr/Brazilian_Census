@@ -99,7 +99,6 @@ ________________________________________________________________________________
 # 2) Save the whole data set file as .csv and but specify the variables you want to load
      # individuals <- fread("pesBrasil.csv", select= myvariblesPES)
 
-individuals <- fread("pesBrasil.csv", select= myvariblesPES)
 _____________________________________________________________________________________
 ### MORTALITY Files (5 seconds) -----------------------------------------------------
     # Append ALL .txt files
