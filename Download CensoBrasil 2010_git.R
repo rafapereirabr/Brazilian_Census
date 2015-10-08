@@ -91,12 +91,12 @@ ________________________________________________________________________________
     lapply(list(dic_dom,dic_pes,dic_mor), computeWidth)
   
 
-### In case you need to work with a smaller subset of the data (e.g. because of memory limits), I would suggest you to make a list of the variables you need ###
-    # myvariblesPES <- c("V0001", "V6400", "V0011", "V0300", "V0601", "V6036", "V0606", "V0010")
-### Then, you have two options ### 
-# 1) Use this list to filter the documentation so you read from the .txt file only those variables you want
-     # dic_pes <- dic_pes[VAR %in% myvariblesPES]
-# 2) Save the whole data set file as .csv and but specify the variables you want to load
+### In case you need to work with a smaller subset of the data (e.g. because of memory limits),   
+### I would suggest you read from the .txt file only those variables you want
+    # myvariblesPES <- c("V0001", "V6400", "V0011", "V0300", "V0601", "V6036", "V0606", "V0010") # list of variables you want
+    # dic_pes <- dic_pes[VAR %in% myvariblesPES] # filter documentation, continue the code 
+
+### Alternatively, you could save the whole data set file as .csv and load only the variables you want
      # individuals <- fread("pesBrasil.csv", select= myvariblesPES)
 
 _____________________________________________________________________________________
