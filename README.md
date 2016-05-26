@@ -6,8 +6,8 @@
 
 However, if you are looking for a pure `R` solution AND you want a fast solution, you might find this code useful.
 
-- The script is written taking advantage of `readr` capabilities, a [new R package](http://blog.rstudio.org/2015/04/09/readr-0-1-0/) that is extremelly fast to read fixed width text files. 
-- Once the text files are stored in your computer, it doesn't take long to save the national data sets in `.csv` format. It took me respectively 13 minutes and 43 minutes to save the national data sets of households and individuals records. The most time-consuming part is actually saving the files.
+- The script is written harnessing the capabilities of `read_fwf{readr}` and `fwrite{data.table}`, which make the tasks of reading fixed width text files and saving .csv files it extremely fast. 
+- Once the text files are stored in your computer, it doesn't take long to save the national data sets in `.csv` format. It took me respectively 2 minutes and 12 minutes to save the national data sets of households and individuals records.
 
 
 **step-by-step. This scriptt:**
