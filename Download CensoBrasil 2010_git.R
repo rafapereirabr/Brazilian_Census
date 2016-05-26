@@ -135,7 +135,7 @@ ptm <- proc.time()  # Start the clock!
 
 # Update decimals in the data
   for(j in seq_along(var)){
-    set(temp, i=NULL, j=var[j], value=as.numeric(temp[[var[j]]]/10^var.decimals[, DEC][j]))
+    set(temp, i=NULL, j=var[j], value=as.numeric(temp[[var[j]]])/10^var.decimals[, DEC][j])
     }
 
 # Save national data set as a '.csv' file
@@ -182,7 +182,7 @@ ptm <- proc.time()  # Start the clock!
 
 # Update decimals in the data
   for(j in seq_along(var)){
-    set(temp, i=NULL, j=var[j], value=as.numeric(temp[[var[j]]]/10^var.decimals[, DEC][j]))
+    set(temp, i=NULL, j=var[j], value=as.numeric(temp[[var[j]]])/10^var.decimals[, DEC][j])
     }
 
 # Save national data set as a '.csv' file
@@ -228,7 +228,7 @@ for (i in 1:length(data_files)){
   
   # Update decimals in the data
   for(j in seq_along(var)){
-    set(temp, i=NULL, j=var[j], value=as.numeric(temp[[var[j]]]/10^var.decimals[, DEC][j]))
+    set(temp, i=NULL, j=var[j], value=as.numeric(temp[[var[j]]])/10^var.decimals[, DEC][j])
   }
   
   cat("saving", i, "out of 28", file) # update status of the loop
