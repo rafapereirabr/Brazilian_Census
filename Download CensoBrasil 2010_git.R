@@ -39,7 +39,7 @@ ________________________________________________________________________________
   
 
   destfolder <- "./Dados_txt/"
-  UFlist <- c("AC","AL","AM","AP","BA","CE","DF","ES","GO","MA","MG","MS","MT","PA","PB","PE","PI","PR","RJ","RN","RO","RR","RS","SC","SE","SP1","SP2-RM","TO")
+  UFlist <- c("AC","AL","AM","AP","BA","CE","DF","ES","GO","MA","MG","MS","MT","PA","PB","PE","PI","PR","RJ","RN","RO","RR","RS","SC","SE","SP1","SP2_RM","TO")
   ftppath <- "ftp://ftp.ibge.gov.br/Censos/Censo_Demografico_2010/Resultados_Gerais_da_Amostra/Microdados/"
   tf <- tempfile()
   td <- tempdir()
