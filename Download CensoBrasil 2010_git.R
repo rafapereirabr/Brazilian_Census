@@ -8,7 +8,7 @@
 
 # By, Rafael Pereira
 # you can fund my contacts at https://sites.google.com/site/rafaelhenriquemoraespereira/
-# 02-Oct-2015, Oxford, UK
+# 17-June-2016, Oxford, UK
 # R version:  RRO 3.2.2 (64 bits)
 
 
@@ -21,6 +21,10 @@
 
 
 ##################### Load packages ----------------------------------------
+
+# install devel version 1.9.7 of data.table
+# GUIDELINES here : https://github.com/Rdatatable/data.table/wiki/Installation
+install.packages("data.table", type = "source", repos = "http://Rdatatable.github.io/data.table")
 
 library(data.table) # to manipulate data frames (fread is ultrafast for reading CSV files)
 library(LaF)
@@ -186,7 +190,7 @@ ptm <- proc.time()  # Start the clock!
     }
 
 # Save national data set as a '.csv' file
-  fwrite(temp, file.path="./Dados_csv/censo2010_BRdom.csv"
+  fwrite(temp, file.path="./Dados_csv/censo2010_BRdom.csv")
   rm(temp,readDOM); gc()
 
 proc.time() - ptm   # Stop the clock
