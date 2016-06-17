@@ -26,8 +26,7 @@
 # GUIDELINES here : https://github.com/Rdatatable/data.table/wiki/Installation
 install.packages("data.table", type = "source", repos = "http://Rdatatable.github.io/data.table")
 
-library(data.table) # to manipulate data frames (fread is ultrafast for reading CSV files)
-library(LaF)
+library(data.table) # to manipulate data frames (fread and fwrite are ultrafast for reading and writing CSV files)
 library(readr) #fast read of fixed witdh files
 library(readxl) # read excel spreadsheets
 library(beepr)    # Beeps at the end of the command
