@@ -37,11 +37,11 @@ ________________________________________________________________________________
 ######## Download Census DATA -----------------------------------------------------
 
 # create subdirectories where we'll save files
-  dir.create(file.path(".", "Dados_txt"))
-  dir.create(file.path(".", "Dados_csv"))
+  dir.create(file.path(".", "dados_txt2010"))
+  dir.create(file.path(".", "dados_csv2010"))
   
 
-  destfolder <- "./Dados_txt/"
+  destfolder <- "./dados_txt2010/"
   UFlist <- c("AC","AL","AM","AP","BA","CE","DF","ES","GO","MA","MG","MS","MT","PA","PB","PE","PI","PR","RJ","RN","RO","RR","RS","SC","SE","SP1","SP2_RM","TO")
   ftppath <- "ftp://ftp.ibge.gov.br/Censos/Censo_Demografico_2010/Resultados_Gerais_da_Amostra/Microdados/"
   tf <- tempfile()
@@ -49,21 +49,21 @@ ________________________________________________________________________________
   
   for (i in UFlist){
                     tf <- paste0(ftppath, i, ".zip")
-                    td <- paste0("./Dados_txt/", i, ".zip")
+                    td <- paste0("./dados_txt2010/", i, ".zip")
                     print(i)
                     download.file(tf, td, mode="wb")
                     }
 
 # unzip all Files
-  filenames <- list.files("./Dados_txt", pattern=".zip", full.names=TRUE)
-  lapply(filenames,unzip, exdir = "./Dados_txt")
+  filenames <- list.files("./dados_txt2010", pattern=".zip", full.names=TRUE)
+  lapply(filenames,unzip, exdir = "./dados_txt2010")
 
 _____________________________________________________________________________________
 ######## Download Census Documentation -----------------------------------------------------
   
   file_url <- "ftp://ftp.ibge.gov.br/Censos/Censo_Demografico_2010/Resultados_Gerais_da_Amostra/Microdados/Documentacao.zip"
   download.file(file_url,"Documentacao.zip", mode="wb")
-  unzip("Documentacao.zip", exdir="Documentacao", junkpaths=T)
+  unzip("Documentacao.zip", exdir="documentacao2010", junkpaths=T)
 
 
 
@@ -71,9 +71,9 @@ ________________________________________________________________________________
 ######## Prepare Documentation files to read .txt -----------------------------------------------------
   
   # Open variables layout from Excel file
-    dic_dom <- read_excel("./Documentacao/Layout_microdados_Amostra.xls", sheet =1, skip = 1)
-    dic_pes <- read_excel("./Documentacao/Layout_microdados_Amostra.xls", sheet =2, skip = 1)
-    dic_mor <- read_excel("./Documentacao/Layout_microdados_Amostra.xls", sheet =4, skip = 1)
+    dic_dom <- read_excel("./documentacao2010/Layout_microdados_Amostra.xls", sheet =1, skip = 1)
+    dic_pes <- read_excel("./documentacao2010/Layout_microdados_Amostra.xls", sheet =2, skip = 1)
+    dic_mor <- read_excel("./documentacao2010/Layout_microdados_Amostra.xls", sheet =4, skip = 1)
     
   
   # convert to data table
