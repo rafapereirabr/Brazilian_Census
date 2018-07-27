@@ -142,7 +142,7 @@ ptm <- proc.time()  # Start the clock!
     }
 
 # Save national data set as a '.csv' file
-  fwrite(temp, file.path="./dados_csv2010/censo2010_BRmor.csv")
+  fwrite(temp, file="./dados_csv2010/censo2010_BRmor.csv")
   rm(temp,readMOR); gc()
   
   proc.time() - ptm   # Stop the clock
@@ -189,7 +189,7 @@ ptm <- proc.time()  # Start the clock!
     }
 
 # Save national data set as a '.csv' file
-  fwrite(temp, file.path="./dados_csv2010/censo2010_BRdom.csv")
+  fwrite(temp, file="./dados_csv2010/censo2010_BRdom.csv")
   rm(temp,readDOM); gc()
 
 proc.time() - ptm   # Stop the clock
@@ -237,7 +237,7 @@ for (i in 1:length(data_files)){
   cat("saving", i, "out of", length(data_files), file) # update status of the loop
   
   # Save national data set as a '.csv' file
-  fwrite(temp, file.path="./dados_csv2010/censo2010_BRpes.csv", append = T)
+  fwrite(temp, file="./dados_csv2010/censo2010_BRpes.csv", append = T)
   rm(temp); gc()
 }
 proc.time() - ptm   # Stop the clock
