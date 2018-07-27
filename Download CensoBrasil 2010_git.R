@@ -86,8 +86,8 @@ ________________________________________________________________________________
   # Create function to compute width
     computeWidth <- function(dataset){dataset[is.na(DEC), DEC := 0] # Convert NA to 0
       dataset[, width := INT + DEC]      # create width variable 
-      setnames(dataset,colnames(dataset)[3],"pos.ini") # change name of variable initial position
-      setnames(dataset,colnames(dataset)[4],"pos.fin") # change name of variable final position
+      setnames(dataset,colnames(dataset)[which(colnames(dataset) == "POSIÇÃO INICIAL")],"pos.ini") # change name of variable initial position
+      setnames(dataset,colnames(dataset)[which(colnames(dataset) == "POSIÇÃO FINAL")],"pos.fin") # change name of variable final position
       }
   
   # Apply function
