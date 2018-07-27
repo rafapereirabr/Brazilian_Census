@@ -111,7 +111,7 @@ ________________________________________________________________________________
 ptm <- proc.time()  # Start the clock!
 
 # list with all Household files
-  data_files  <- list.files(path="./Dados_txt2010",
+  data_files  <- list.files(path="./dados_txt2010",
                             recursive=T,
                             pattern="Mor",
                             full.names=T)
@@ -158,7 +158,7 @@ ________________________________________________________________________________
 ptm <- proc.time()  # Start the clock!
 
 # list with all Household files
-  data_files  <- list.files(path="./Dados_txt2010",
+  data_files  <- list.files(path="./dados_txt2010",
                             recursive=T,
                             pattern="Dom",
                             full.names=T)
@@ -202,7 +202,7 @@ ________________________________________________________________________________
     # not as fast
     # not memory intensive for big data sets
 
-data_files  <- list.files(path="./Dados_txt2010",
+data_files  <- list.files(path="./dados_txt2010",
                           recursive=T,
                           pattern="Pes",
                           full.names=T)
