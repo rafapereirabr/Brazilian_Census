@@ -1,3 +1,8 @@
+*Update on July 2018 :*
+
+My colleague at Ipea (Lucas Mation) has created an `R` package to download and access microdata from various surveys in Brazil, including the population census. The package is called [microdadosBrasil](https://github.com/lucasmation/microdadosBrasil/) and it incorporates all of the good parts this repository and it goes beyond it. Hence I've decided to stop updating this repository and I recommend people to use microdadosBrasil.
+
+
 # Brazilian Census 2000 and 2010
 ##This script will help you Download the 2000 and 2010 Brazilian Census datasets and save them as .csv files. 
 
