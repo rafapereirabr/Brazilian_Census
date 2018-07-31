@@ -86,8 +86,8 @@ ________________________________________________________________________________
   # Create function to compute width
     computeWidth <- function(dataset){dataset[is.na(DEC), DEC := 0] # Convert NA to 0
       dataset[, width := INT + DEC]      # create width variable 
-      setnames(dataset,colnames(dataset)[3],"pos.ini") # change name of variable initial position
-      setnames(dataset,colnames(dataset)[4],"pos.fin") # change name of variable final position
+      setnames(dataset,colnames(dataset)[which(colnames(dataset) == "POSIÇÃO INICIAL")],"pos.ini") # change name of variable initial position
+      setnames(dataset,colnames(dataset)[which(colnames(dataset) == "POSIÇÃO FINAL")],"pos.fin") # change name of variable final position
       }
   
   # Apply function
@@ -111,7 +111,7 @@ ________________________________________________________________________________
 ptm <- proc.time()  # Start the clock!
 
 # list with all Household files
-  data_files  <- list.files(path="./Dados_txt2010",
+  data_files  <- list.files(path="./dados_txt2010",
                             recursive=T,
                             pattern="Mor",
                             full.names=T)
@@ -142,7 +142,7 @@ ptm <- proc.time()  # Start the clock!
     }
 
 # Save national data set as a '.csv' file
-  fwrite(temp, file.path="./dados_csv2010/censo2010_BRmor.csv")
+  fwrite(temp, file="./dados_csv2010/censo2010_BRmor.csv")
   rm(temp,readMOR); gc()
   
   proc.time() - ptm   # Stop the clock
@@ -158,7 +158,7 @@ ________________________________________________________________________________
 ptm <- proc.time()  # Start the clock!
 
 # list with all Household files
-  data_files  <- list.files(path="./Dados_txt2010",
+  data_files  <- list.files(path="./dados_txt2010",
                             recursive=T,
                             pattern="Dom",
                             full.names=T)
@@ -189,7 +189,7 @@ ptm <- proc.time()  # Start the clock!
     }
 
 # Save national data set as a '.csv' file
-  fwrite(temp, file.path="./dados_csv2010/censo2010_BRdom.csv")
+  fwrite(temp, file="./dados_csv2010/censo2010_BRdom.csv")
   rm(temp,readDOM); gc()
 
 proc.time() - ptm   # Stop the clock
@@ -202,7 +202,7 @@ ________________________________________________________________________________
     # not as fast
     # not memory intensive for big data sets
 
-data_files  <- list.files(path="./Dados_txt2010",
+data_files  <- list.files(path="./dados_txt2010",
                           recursive=T,
                           pattern="Pes",
                           full.names=T)
@@ -237,7 +237,7 @@ for (i in 1:length(data_files)){
   cat("saving", i, "out of", length(data_files), file) # update status of the loop
   
   # Save national data set as a '.csv' file
-  fwrite(temp, file.path="./dados_csv2010/censo2010_BRpes.csv", append = T)
+  fwrite(temp, file="./dados_csv2010/censo2010_BRpes.csv", append = T)
   rm(temp); gc()
 }
 proc.time() - ptm   # Stop the clock
